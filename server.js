@@ -6,14 +6,14 @@ require('dotenv').config()
 
 let db,
     dbConnectionString = process.env.DB_STRING,
-    dbName = 'sample_mflix',
+    dbName = 'field-guide',
     collection
 
 MongoClient.connect(dbConnectionString)
     .then(client => {
         console.log('Connected to Database')
         db = client.db(dbName)
-        collection = db.collection('movies')
+        collection = db.collection('native-flowers')
     })
 
 app.set('view engine', 'ejs')
