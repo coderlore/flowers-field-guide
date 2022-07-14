@@ -9,6 +9,19 @@
 </head>
 <body>
     <h1>Native Flowers!</h1>
+
+    <ul class="plants">
+        <% for(let i=0; i < info.length; i++) {%>
+            <li class="plant">
+                <span><%= info[i].name %></span>
+                <span><%= info[i].common_name %></span>
+                <span><%= info[i].scientific_name %></span>
+                <span><%= info[i].family_name %></span>
+                <span><%= info[i].use %></span>
+            </li>
+        <% } %>
+        </ul>
+
     <script src="/public/main.js"></script>
 </body>
 </html>
