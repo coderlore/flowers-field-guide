@@ -12,15 +12,15 @@
 
     <ul class="plants">
         <% for(let i=0; i < info.length; i++) {%>
-            <li class="plant">
-                <span><%= info[i].name %></span>
-                <span><%= info[i].common_name %></span>
-                <span><%= info[i].scientific_name %></span>
-                <span><%= info[i].family_name %></span>
-                <span><%= info[i].use %></span>
-            </li>
+            <li><span><%= info[i].name %></span></li>
+            <li><span><%= info[i].common_name %></span></li>
+            <li><span><%= info[i].scientific_name %></span></li>
+            <li><span><%= info[i].family_name %></span></li>
+            <li><span><%= info[i].use %></span></li>
+            <li><span><%= info[i].description %></span></li>
+            <img src="<%= info[i].image %>" alt="">
         <% } %>
-        </ul>
+    </ul>
 
     <script src="/public/main.js"></script>
 </body>
