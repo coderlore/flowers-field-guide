@@ -5,23 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Native Hawaiian Flowers Field Guide</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Native Flowers!</h1>
 
+    <h2>Search for a plant</h2>
+
+    <input type="text">
+    <button id="search">Search database</button>
     <ul class="plants">
-        <% for(let i=0; i < info.length; i++) {%>
-            <li><span><%= info[i].name %></span></li>
-            <li><span><%= info[i].common_name %></span></li>
-            <li><span><%= info[i].scientific_name %></span></li>
-            <li><span><%= info[i].family_name %></span></li>
-            <li><span><%= info[i].use %></span></li>
-            <li><span><%= info[i].description %></span></li>
-            <img src="<%= info[i].image %>" alt="">
-        <% } %>
+        <li><span>Name: </span><span id="plantName"></span></li>
+        <!-- <li><span><%= info[0].common_name %></span></li>
+        <li><span><%= info[0].scientific_name %></span></li>
+        <li><span><%= info[0].family_name %></span></li>
+        <li><span><%= info[0].use %></span></li>
+        <li><span><%= info[0].description %></span></li>
+        <img src="<%= info[0].image %>" alt=""> -->
     </ul>
 
-    <script src="/public/main.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>
