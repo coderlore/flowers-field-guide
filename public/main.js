@@ -2,7 +2,6 @@ document.querySelector('#search').addEventListener('click', apiRequest)
 
 async function apiRequest() {
     const plantName = document.querySelector('input').value
-    console.log(plantName)
     // try{
     //     const response = await fetch(`https://field-guide-api.herokuapp.com/api/${alienName}`)
     //     const data = await response.json()

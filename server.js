@@ -30,6 +30,17 @@ app.get('/', (request, response) => {
     .catch(error => console.error(error))
 })
 
+app.get('/api/:plantName', (request, response) => {
+    const plantName = request.params.plantName.toLowerCase()
+    console.log(plantName)
+    collection.find({name: plantName}).toArray()
+        .then(results => {
+            console.log(results)
+            response.json(results[0])
+        })
+        .catch(error => console.error(error))
+    })
+
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port`)
 })
