@@ -6,9 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Native Hawaiian Flowers Field Guide</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Native Flowers!</h1>
+    <!--Nav Bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">Native Hawaiian Flowers</a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navmenu"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Placeholder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Another One</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">And Another</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Content-->
+    <section class="bg-dark text-light p-5 text-center">
+        <div class="container">
+            <div class="d-sm-flex">
+                <div>
+                    <h1>Native <span class="text-warning">Flowers</span></h1>
+                    <p>Discover endemic plants to Hawaii. Join us and track all of the plants you find.</p>
+                </div>
+                <img class="img-fluid w-50" src="/img/undraw_flowers_vx06.svg" alt="">
+            </div>
+        </div>
+    </section>
 
     <h2>Search for a plant</h2>
 
@@ -23,7 +62,7 @@
         <li><span>Description: </span><span id="description"></span></li>
         <li><img id="image" src=""></li>
     </ul>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="/main.js"></script>
 </body>
 </html>
