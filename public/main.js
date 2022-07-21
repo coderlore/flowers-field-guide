@@ -1,5 +1,7 @@
-document.querySelector('#search').addEventListener('click', apiRequest)
+let searchBtn = document.querySelector("#search")
+searchBtn.addEventListener('click', apiRequest)
 const plantName = document.querySelector('input').value
+console.log(plantName)
 
 async function apiRequest() {
     const plantName = document.querySelector('input').value
