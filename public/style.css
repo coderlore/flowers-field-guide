@@ -3,3 +3,7 @@
         width: 50%;
     }
 }
+
+.plants{
+    list-style-type: none;
+}
