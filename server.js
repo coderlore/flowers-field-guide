@@ -1,7 +1,5 @@
 const express = require('express')
 const app = express()
-const cors = require('cors')
-const MongoClient =require('mongodb').MongoClient
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
@@ -14,17 +12,17 @@ const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
 
-let db,
-    dbConnectionString = process.env.DB_STRING,
-    dbName = 'field-guide',
-    collection
+// let db,
+//     dbConnectionString = process.env.DB_STRING,
+//     dbName = 'field-guide',
+//     collection
 
-MongoClient.connect(dbConnectionString)
-    .then(client => {
-        console.log('Connected to Database')
-        db = client.db(dbName)
-        collection = db.collection('native-flowers')
-    })
+// MongoClient.connect(dbConnectionString)
+//     .then(client => {
+//         console.log('Connected to Database')
+//         db = client.db(dbName)
+//         collection = db.collection('native-flowers')
+//     })
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -45,7 +43,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.use(cors())
+// app.use(cors())
 
 //Logging
 app.use(logger("dev"));
@@ -76,24 +74,24 @@ app.use(
   app.use("/comment", commentRoutes);
   
 // Refactor to a new file
-app.get('/', (request, response) => {
-    db.collection('native-flowers').find().toArray()
-    .then(data => {
-        response.render('index.ejs', { info: data })
-    })
-    .catch(error => console.error(error))
-})
+// app.get('/', (request, response) => {
+//     db.collection('native-flowers').find().toArray()
+//     .then(data => {
+//         response.render('index.ejs', { info: data })
+//     })
+//     .catch(error => console.error(error))
+// })
 
-app.get('/api/:plantName', (request, response) => {
-    const plantName = request.params.plantName.toLowerCase()
-    console.log(plantName)
-    collection.find({name: plantName}).toArray()
-        .then(results => {
-            console.log(results)
-            response.json(results[0])
-        })
-        .catch(error => console.error(error))
-    })
+// app.get('/api/:plantName', (request, response) => {
+//     const plantName = request.params.plantName.toLowerCase()
+//     console.log(plantName)
+//     collection.find({name: plantName}).toArray()
+//         .then(results => {
+//             console.log(results)
+//             response.json(results[0])
+//         })
+//         .catch(error => console.error(error))
+//     })
 
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port`)
