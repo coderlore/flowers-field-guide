@@ -7,3 +7,10 @@
 .plants{
     list-style-type: none;
 }
+
+button:focus, a:focus, button
+{
+         outline: none !important;
+         border: none !important;
+         box-shadow: none !important;
+}
