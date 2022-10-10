@@ -1,10 +1,16 @@
 let searchBtn = document.querySelector("#search")
 searchBtn.addEventListener('click', apiRequest)
-const plantName = document.querySelector('input').value
+document.querySelector("#plant1-btn").addEventListener('click', apiRequest)
+let plantName = document.querySelector('input').value
 // console.log(plantName)
 
 async function apiRequest() {
-    const plantName = document.querySelector("input").value
+    //Conditional to check if input.value
+    if (!document.querySelector("input").value){
+        plantName = "nehe"
+    } else {
+        plantName = document.querySelector("input").value
+    }
 
     try{
         const response = await fetch(`https://flower-field-guide-api.herokuapp.com/api/${plantName}`)
