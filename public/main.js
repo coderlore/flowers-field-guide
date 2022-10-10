@@ -5,7 +5,7 @@ let plantName = document.querySelector('input').value
 // console.log(plantName)
 
 async function apiRequest() {
-    //Conditional to check if input.value
+    //Use data attributes to see which of the 3 links were clicked
     if (!document.querySelector("input").value){
         plantName = "nehe"
     } else {
