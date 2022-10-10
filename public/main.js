@@ -24,24 +24,31 @@ async function apiRequest() {
 }
 
 async function apiRender() {
-    const plantName1 = "ohai"
-    const plantName2 = "ilima"
-    const plantName3 = "nehe"
+    const res1 = "nehe"
+    const res2 = "ilima"
+    const res3 = "ohai"
 
     try{
-        //plant 1
-        const response1 = await fetch(`https://flower-field-guide-api.herokuapp.com/api/${plantName1}`)
-        const data1 = await response1.json()
-        document.getElementById('plant1-name').innerText = data1.name
-        document.getElementById('plant1-description').innerText = data1.description
-        document.getElementById('plant1-image').src = data1.image
+        let [data1, data2, data3] = await Promise.all([
+            fetch(`https://flower-field-guide-api.herokuapp.com/api/nehe`),
+            fetch(`https://flower-field-guide-api.herokuapp.com/api/ilima`),
+            fetch(`https://flower-field-guide-api.herokuapp.com/api/ohai`)
+        ])
         
-         //plant 2
-        //  const response2 = await fetch(`https://flower-field-guide-api.herokuapp.com/api/${plantName2}`)
-        //  const data2 = await response2.json()
-        //  document.getElementById('plant1-name').innerText = data2.name
-        //  document.getElementById('plant1-description').innerText = data2.description
-        //  document.getElementById('plant1-image').src = data2.image
+        const response1 = await data1.json()
+        document.getElementById('plant1-name').innerText = response1.name
+        document.getElementById('plant1-description').innerText = response1.description
+        document.getElementById('plant1-image').src = response1.image
+
+        const response2 = await data2.json()
+        document.getElementById('plant2-name').innerText = response2.name
+        document.getElementById('plant2-description').innerText = response2.description
+        document.getElementById('plant2-image').src = response2.image
+
+        const response3 = await data3.json()
+        document.getElementById('plant3-name').innerText = response3.name
+        document.getElementById('plant3-description').innerText = response3.description
+        document.getElementById('plant3-image').src = response3.image
     } catch(error) {
         console.log(error)
     }
