@@ -1,35 +1,36 @@
 <%- include('partials/header') -%>
 <div class="container overflow-auto">
   <div class="row justify-content-center overflow-auto">
-    <div class="col-6">
-      <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
+    <div class="col-6 mt-5">
+      <img class="img-fluid rounded" src="<%= post.image%>" />
+    </div>
+    <div class="col-3 mt-5">
+      <div class="col-3 mt-5">
+        <p class="fa fa-map-pin text-warning"> <%= post.location %></p>
+      </div>
+      <h2 class="font-bold"><%= post.title %></h2>
+      <div class="col-12 mt-3 mb-5">
+        <h5 class="font-light"><%= post.caption %></h5>
+      </div>
+      <h3 class="col-8 my-5 ">Likes: <%= post.likes %></h3>
       <div class="row justify-content-between">
         <form
           class="col-1"
           action="/post/likePost/<%= post._id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn btn-primary fa fa-heart px-4" type="submit"></button>
         </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
+        
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post._id %>?_method=DELETE"
           method="POST"
           class="col-2"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-primary fa fa-trash px-4" type="submit"></button>
         </form>
         <%}%>
-      </div>
-    </div>
-    <div class="col-3 mt-5">
-      <div class="col-3 mt-5">
-        <p class="fa fa-map-pin"> <%= post.location %></p>
-      </div><div class="col-3 mt-3">
-        <p><u>Notes</u></p>
-        <p><%= post.caption %></p>
       </div>
     </div>
     <div class="mt-5">
