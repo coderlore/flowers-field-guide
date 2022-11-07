@@ -8,15 +8,14 @@ A web application that searches for native hawaiian flowers.
 
 **Tech used:** Node, MongoDB, Express, EJS, Bootstrap
 
-TBD
 
 ## Optimizations
 
-TBD
+- Create a checklist for what plants the user has or hasn't discovered.
 
 ## Lessons Learned:
 
-TBD
+- Use a promise all to return multiple results.
 
 ## Examples:
 Take a look at these couple examples that I have in my own portfolio:
