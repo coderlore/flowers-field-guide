@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+}
+
+body > footer {
+    position: sticky;
+    top: 100vh;
+}
+
 @media(min-width: 768px) {
     .plant-search {
         width: 50%;
@@ -10,7 +19,7 @@
 
 button:focus, a:focus, button
 {
-         outline: none !important;
-         border: none !important;
-         box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
